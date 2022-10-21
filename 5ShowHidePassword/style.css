@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    text-align: center;
+    padding: 2rem 2rem 0.5rem 2rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 2rem;
+}
+.app-wrapper{
+    background-color: rgb(214, 214, 13);
+    padding: 1.5rem;
+}
+.lbl-user{
+    display: flex;
+    flex-direction: column;
+}
+.lbl-passwd{
+    display: flex;
+    flex-direction: column;
+}
+.check-box{
+    margin-top: 3px;
+}
+.app-wrapper p{
+    font-size: 1.1rem;
+    
+}
+.app-wrapper input{
+    font-size: 1.1rem;
+    padding: 0.3rem;
+}
+.buttons{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.buttons button{
+    width: 5rem;
+    height: 2rem;
+}
+.buttons .login{
+    border: 2px solid green;
+    color: black;
+    background-color: lightgreen;
+}
+.buttons .cancel{
+    border: 2px solid blue ;
+    color: black;
+    background-color: lightblue;
+}

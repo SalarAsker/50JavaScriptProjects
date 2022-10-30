@@ -1,47 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Show and hide password</title>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center ;
+}
+
+.counter-wrapper{
+    /* background-color: lightblue; */
+    width: 15rem;
+    /* color: white; */
+    padding: 2rem;
+    text-align: center;
+}
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: blue;
+}
+.counter-value{
+    font-size: 7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.reset, .upp, .down{
+    border: none;
+    width: 4rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.reset{
+    /* flex-grow: 1; */
+  
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    color: white;
+    background-color: black;
+}
+.upp{
    
-</head>
-<body>
+    background-color: green;
+    color: white;
+   
+} 
+.down{
+   
+    background-color: red;
+    color: white;
+   
     
-        <div class="app-wrapper">
-            <h1 class="title">Log In</h1>
-            <form action="">
-                <label class="lbl-user" for="username">
-                    <p>Username</p>
-                    <input type="text" name="username" id="uname" class="uname"> 
-                </label>
-                <label class="lbl-passwd" for="password">
-                    <p>Password</p>
-                    <input type="password" name="password" id="passwd" class="passwd">
-                   <div class="check-box"> <input type="checkbox" name="" id="show-hide"> Show Password </div>    
-                </label>
-                <div class="buttons">
-                    <button class="login">Login</button>
-                    <button class="cancel">Cancel</button>
-                </div>
+}
 
-            </form>
-        </div>
-        <script src="app.js"></script>
-        <script>
-            const showHide = document.getElementById('show-hide');
-            const passwdTextBox = document.getElementById('passwd');
-            showHide.addEventListener('click', () =>{
-                if(showHide.checked == true){
-                    passwdTextBox.setAttribute('type','text');
-                }else{
-                    passwdTextBox.setAttribute('type','password');
-                }
-            })
-        </script>
+:hover:is(.reset, .down, .upp){
+  opacity: 0.5;
+}
 
 
-</body>
-</html>
+
+
+
+// select html elements
+
+const cnt = document.querySelector('.counter-value');
+const upp = document.querySelector('.upp');
+const down = document.querySelector('.down');
+const reset = document.querySelector('.reset');
+
+const lowerLimit = 0;
+const upperLimit = 10;
+let counter = 0;
+
+upp.addEventListener('click', () =>{
+    counter++;
+    if(counter >= upperLimit){
+        counter = upperLimit;
+        
+    }
+    cnt.innerHTML = counter;
+    
+});
+
+down.addEventListener('click', () =>{
+    counter--;
+    if(counter <= lowerLimit){
+        counter = lowerLimit;
+        
+    }
+    cnt.innerHTML = counter;
+    
+});
+
+reset.addEventListener('click', () =>{
+    cnt.innerHTML = 0;
+    counter = 0;
+});
+
+
+const allbtn = document.querySelectorAll('.btn');
+allbtn.forEach(b => {
+    b.addEventListener('click', DoCounter);
+})
+
+function DoCounter(e){
+   
+    console.log();
+
+
+}

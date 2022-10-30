@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Random From Array</title>
+    <style>
+        body{
+            margin: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        .loading-counter{
+            text-align: center;
+            width: 200px;
+            /* background-color: lightblue; */
+        }
+        #counter{
+           
+            /* background-color: black; */
+            color: black;
+            padding: 20px;
+        }
+        #hr{
+            width: 100%;
+            margin-left: 0;
+            height: 15px;
+            /* background-color: blue; */
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <p class="pharase">?</p>
+    <button class="getPharase">Get Random Pharase</button>
+    <script src="app.js"></script> -->
+
+
+    <!-- <input type="text" name="" id="number">
+    <button id="getnr">Get</button>
+    <script>
+
+        const btnn = document.getElementById('getnr');
+        btnn.onclick = () =>{
+            let data = document.getElementById('number').valueAsNumber; // '12', "12", `12` 
+            console.log(typeof data);
+        }
+    </script> -->
+
+    <div class="loading-counter">
+        <div id="counter">Loading</div>
+        <hr id="hr">
+       
+    </div>
+
+    <script>
+        const max = 100;
+        let min = 0;
+        let wid = 0;
+
+        document.getElementById('load');
+        document.addEventListener('DOMContentLoaded', () =>
+        {
+
+            let counter = setInterval(RunCounter, 100);
+
+            function RunCounter(){
+                min++;
+                document.getElementById('counter').innerHTML = `Loading ${min}%`;
+                document.getElementById('hr').style.width = `${min}%`;
+                document.getElementById('hr').style.backgroundColor = `blue`;
+
+
+                    if(min === max){
+                    clearInterval(counter);
+                    document.getElementById('counter').innerHTML = `Loading Done`;
+                    document.getElementById('counter').style.backgroundColor = `white`;
+                    document.getElementById('counter').style.color = `black`;
+                    document.getElementById('hr').style.backgroundColor = `lightgreen`;
+                    min=0;
+                    }
+                }
+
+        })
+    
+
+      
+    </script>
+</body>
+</html>

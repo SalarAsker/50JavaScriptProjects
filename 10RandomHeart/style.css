@@ -1,0 +1,22 @@
+.fa-heart{
+    color: red;
+    font-size: 40px;
+    position: absolute;
+    
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    
+    /* background-image: linear-gradient(pink, black); */
+    /* background-color: black; */
+    width: 100vw;
+    height: 100vh;
+    /* padding: 50px; */
+    position: relative;
+   
+}

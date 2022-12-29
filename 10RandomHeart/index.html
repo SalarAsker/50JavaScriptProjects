@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Image Slider</title>
+   
+     
+
+
+  
+</head>
+<body>
+    
+    <!-- <div class="slider-wrapper">
+        <div class="image.container">
+            <img src="image/picture0.jpg" alt="" class="img">
+        </div>
+        <div class="slider-controls">
+            <button class="prev"> Prev </button>
+            <p class="slide-number"></p>
+            <button class="next">Next</button>
+        </div>
+    </div> -->
+
+    <i class="fa-solid fa-star"></i> 
+
+   
+
+        <script>
+            let numberOfHearts = 0;
+            window.addEventListener('load', () =>{
+           
+           
+           let id =  setInterval(() => {
+                
+                let w = window.innerWidth -50; // x
+            let h = window.innerHeight - 50; // y
+
+            objectX = Math.floor(Math.random() * w);
+            objectY = Math.floor(Math.random() * h);
+            // console.log(objectX + ' ' + objectY);
+
+            let starElement = document.createElement('i'); // <i> </i>
+            starElement.classList.add('fa-solid');
+            starElement.classList.add('fa-heart');
+            console.log(starElement);
+            document.body.appendChild(starElement);
+            starElement.style.top = objectY + 'px';
+            starElement.style.left = objectX + 'px';
+
+            numberOfHearts++;
+            if(numberOfHearts == 100){
+                clearInterval(id);
+            }
+
+            }, 100);
+            
+            
+             
+           
+        })
+           
+          
+
+           
+
+          
+
+    
+        </script>
+</body>
+</html>

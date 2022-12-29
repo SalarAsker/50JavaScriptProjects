@@ -2,30 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Random From Array</title>
+    <title>Loading Bar</title>
     <style>
         body{
-            margin: 0;
+            margin: 0 auto;
             display: grid;
             place-items: center;
             height: 100vh;
+
+          
+            background: linear-gradient(#3d4239, #457b9d);
         }
         .loading-counter{
             text-align: center;
-            width: 200px;
+            width: 300px;
             /* background-color: lightblue; */
+            color: #ddd017;
         }
         #counter{
            
             /* background-color: black; */
-            color: black;
-            padding: 20px;
+            color: white;
+            padding: 1rem;
+            font-size: 2rem;
         }
         #hr{
             width: 100%;
             margin-left: 0;
-            height: 15px;
+            height: 2rem;
             /* background-color: blue; */
+            border: none;
             
         }
     </style>
@@ -59,8 +65,8 @@
         let min = 0;
         let wid = 0;
 
-        document.getElementById('load');
-        document.addEventListener('DOMContentLoaded', () =>
+      
+        window.addEventListener('load', () =>
         {
 
             let counter = setInterval(RunCounter, 100);
@@ -69,14 +75,14 @@
                 min++;
                 document.getElementById('counter').innerHTML = `Loading ${min}%`;
                 document.getElementById('hr').style.width = `${min}%`;
-                document.getElementById('hr').style.backgroundColor = `blue`;
+                document.getElementById('hr').style.backgroundColor = `#ddd017`;
 
 
                     if(min === max){
                     clearInterval(counter);
                     document.getElementById('counter').innerHTML = `Loading Done`;
-                    document.getElementById('counter').style.backgroundColor = `white`;
-                    document.getElementById('counter').style.color = `black`;
+                    // document.getElementById('counter').style.backgroundColor = `white`;
+                    document.getElementById('counter').style.color = `white`;
                     document.getElementById('hr').style.backgroundColor = `lightgreen`;
                     min=0;
                     }
